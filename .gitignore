@@ -1,13 +1,16 @@
-# Logs
-*.log
-firebase-debug.log*
+# Dependency directories
+node_modules/
+
+# Package lock
+package-lock.json
+
+# Nuxt
+.nuxt
 
 # Firebase
 .firebaserc
 .firebase/
+firebase-debug.log*
 
-# Dependency directories
-node_modules/
-
-# Nuxt
-.nuxt
+# Functions
+functions/lib/
