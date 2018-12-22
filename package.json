@@ -1,0 +1,15 @@
+{
+  "name": "firebase-nuxt",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build --modern"
+  },
+  "author": "hecateball",
+  "license": "ISC",
+  "dependencies": {
+    "element-ui": "^2.4.11",
+    "firebase": "^5.7.1",
+    "nuxt": "^2.3.4"
+  }
+}

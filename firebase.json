@@ -1,0 +1,28 @@
+{
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "functions": {
+    "source": "functions",
+    "predeploy": [
+      "npm install",
+      "npm run build -- --quiet",
+      "cp -r static/ .nuxt/dist/",
+      "npm --prefix functions install",
+      "npm --prefix functions run build",
+      "rsync -ac .nuxt/ functions/.nuxt/"
+    ]
+  },
+  "hosting": {
+    "public": ".nuxt/dist",
+    "ignore": [
+      "**/server/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "render"
+      }
+    ]
+  }
+}
