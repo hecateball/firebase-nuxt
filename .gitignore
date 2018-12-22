@@ -1,0 +1,13 @@
+# Logs
+*.log
+firebase-debug.log*
+
+# Firebase
+.firebaserc
+.firebase/
+
+# Dependency directories
+node_modules/
+
+# Nuxt
+.nuxt
