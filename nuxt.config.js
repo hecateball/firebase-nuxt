@@ -3,6 +3,7 @@ module.exports = {
   loading: false,
   plugins: [
     { src: '~/plugins/firebase', ssr: true },
+    { src: '~/plugins/element-ui', ssr: true }
   ],
   build: {
     publicPath: '/client/'
@@ -10,7 +11,7 @@ module.exports = {
   env: {
     firebase: {
       apiKey: "AIzaSyBZnuWppDsGFuAwiSiOTcoZm03AJLXh7sw",
-      authDomain: "hecateball-4628e.firebaseapp.com",
+      authDomain: "mikuappend.com",
       databaseURL: "https://hecateball-4628e.firebaseio.com",
       projectId: "hecateball-4628e",
       storageBucket: "hecateball-4628e.appspot.com",
