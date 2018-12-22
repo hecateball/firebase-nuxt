@@ -3,10 +3,10 @@
     <no-ssr>
       <el-form v-if="!currentUser" @submit.native.prevent>
         <el-form-item>
-          <el-input prefix-icon="el-icon-message" placeholder="your@email.com" size="medium" v-model="email"/>
+          <el-input v-model="email" prefix-icon="el-icon-message" placeholder="your@email.com" autocomplete="section-sign-in email"/>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click.prevent="signUp">サインアップ</el-button>
+          <el-button type="primary" @click.prevent="signIn">サインイン</el-button>
         </el-form-item>
       </el-form>
       <el-form v-else @submit.native.prevent>
@@ -47,19 +47,19 @@ export default {
       .limit(10)
       .onSnapshot((snapshot) => {
         snapshot.docChanges().forEach((change) => {
-          this.messages.splice(change.newIndex, change.type === 'added' ? 0 : 1, change.doc.data())
+          this.messages.splice(change.newIndex, 0, change.doc.data())
         })
       })
     this.$once('hook:beforeDestroy', unsubscribe)
   },
   methods: {
-    signUp: async function() {
+    signIn: async function() {
       try{
         await firebase.auth().sendSignInLinkToEmail(this.email, {
           url: `https://${process.env.firebase.authDomain}/auth`,
           handleCodeInApp: true
         })
-        this.$message(`${this.email} にサインアップメールを送信しました。`)
+        this.$message(`${this.email} にメールを送信しました。`)
       } catch ({ message }) {
         this.$message.error(message)
       }
