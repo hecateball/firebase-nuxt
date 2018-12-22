@@ -1,7 +1,7 @@
 <template>
   <el-main>
     <no-ssr>
-      <el-form v-if="!currentUser">
+      <el-form v-if="!currentUser" @submit.native.prevent>
         <el-form-item>
           <el-input prefix-icon="el-icon-message" placeholder="your@email.com" size="medium" v-model="email"/>
         </el-form-item>
@@ -9,7 +9,7 @@
           <el-button type="primary" @click.prevent="signUp">サインアップ</el-button>
         </el-form-item>
       </el-form>
-      <el-form v-else>
+      <el-form v-else @submit.native.prevent>
         <el-form-item>
           <el-input placeholder="コメントをどうぞ" v-model="message" maxlength="100"/>
         </el-form-item>
@@ -19,6 +19,7 @@
       </el-form>
     </no-ssr>
     <el-table v-if="messages.length" :data="messages">
+      <el-table-column prop="uid" label="UID" width="300"/>
       <el-table-column prop="message" label="メッセージ"/>
     </el-table>
   </el-main>
@@ -69,6 +70,7 @@ export default {
           .collection('messages')
           .add({
             uid: this.currentUser.uid,
+            admin: false,
             message: this.message,
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
           })
