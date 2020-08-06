@@ -8,8 +8,15 @@
   "author": "hecateball",
   "license": "ISC",
   "dependencies": {
-    "element-ui": "^2.4.11",
-    "firebase": "^5.7.1",
-    "nuxt": "^2.3.4"
+    "firebase": "^7.17.1",
+    "nuxt": "^2.14.1",
+    "nuxt-composition-api": "^0.11.0"
+  },
+  "devDependencies": {
+    "@inkline/nuxt": "^2.3.0",
+    "@nuxt/types": "^2.14.1",
+    "@nuxt/typescript-build": "^2.0.2",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.3"
   }
 }

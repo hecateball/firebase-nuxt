@@ -1,8 +1,10 @@
 <template>
-  <el-container>
-    <el-header>
+  <i-layout>
+    <i-layout-header>
       <h1>Firebase + Nuxt.js Sample</h1>
-    </el-header>
-    <nuxt/>
-  </el-container>
+    </i-layout-header>
+    <i-layout-content>
+      <nuxt/>
+    </i-layout-content>
+  </i-layout>
 </template>
