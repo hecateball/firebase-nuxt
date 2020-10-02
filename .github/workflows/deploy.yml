@@ -45,6 +45,7 @@ jobs:
             --project $GCP_PROJECT \
             --region asia-northeast1 \
             --platform managed \
+            --allow-unauthenticated \
             --quiet
 
       - name: Deploy to Firebase
