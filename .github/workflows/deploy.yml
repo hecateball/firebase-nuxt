@@ -1,0 +1,55 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+
+env:
+  GCP_PROJECT: 'hoshimachi-studio'
+  IMAGE: gcr.io/hoshimachi-studio/renderer:${{ github.sha }}
+
+jobs:
+  delivery:
+    name: Delivery
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@master
+
+      - name: Install Dependencies App
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: GCP Authenticate
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: '290.0.1'
+          service_account_email: ${{ secrets.GCP_SERVICE_ACCOUNT_EMAIL }}
+          service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+
+      - name: Configure docker to use the gcloud cli
+        run: gcloud auth configure-docker --quiet
+
+      - name: Build a docker image
+        run: docker build . -t $IMAGE
+
+      - name: Push the docker image
+        run: docker push $IMAGE
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy renderer \
+            --image $IMAGE \
+            --project $GCP_PROJECT \
+            --region asia-northeast1 \
+            --platform managed \
+            --quiet
+
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@v1.5.0
+        with:
+          args: deploy -P $GCP_PROJECT --force
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

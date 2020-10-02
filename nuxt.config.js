@@ -6,14 +6,14 @@ module.exports = {
     { src: '~/plugins/firebase', ssr: true },
   ],
   env: {
-    FIREBASE_API_KEY: 'AIzaSyD83KgMCnT1GNumpojKybJlV2WnDRlFtEM',
-    FIREBASE_AUTH_DOMAIN: 'shiodaifuku-io.firebaseapp.com',
-    FIREBASE_DATABASE_URL: 'https://shiodaifuku-io.firebaseio.com',
-    FIREBASE_PROJECT_ID: 'shiodaifuku-io',
-    FIREBASE_STORAGE_BUCKET: 'shiodaifuku-io.appspot.com',
-    FIREBASE_MESSAGING_SENDER_ID: '875470404419',
-    FIREBASE_APP_ID: '1:875470404419:web:aee8c38e72511426',
-    FIREBASE_MEASUREMENT_ID: 'G-C66P2JVWL1',
+    FIREBASE_API_KEY: 'AIzaSyDOYeAuekhLYfPvQyHS7eaNQ4J2G-HWEt8',
+    FIREBASE_AUTH_DOMAIN: 'hoshimachi-studio.firebaseapp.com',
+    FIREBASE_DATABASE_URL: 'https://hoshimachi-studio.firebaseio.com',
+    FIREBASE_PROJECT_ID: 'hoshimachi-studio',
+    FIREBASE_STORAGE_BUCKET: 'hoshimachi-studio.appspot.com',
+    FIREBASE_MESSAGING_SENDER_ID: '96795732381',
+    FIREBASE_APP_ID: '1:96795732381:web:e492432a2ccd3c0f89a774',
+    FIREBASE_MEASUREMENT_ID: 'G-0CGK3N66KS',
   },
   head: {
     title: 'Firebase + Nuxt.js'
