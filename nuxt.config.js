@@ -1,5 +1,4 @@
 module.exports = {
-  mode: 'universal',
   loading: false,
   modules: [ '@inkline/nuxt' ],
   plugins: [

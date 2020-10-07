@@ -1,0 +1,9 @@
+/assets
+/layouts
+/pages
+/plugins
+/static
+firebase.json
+firestore.rules
+tsconfig.json
+*.d.ts

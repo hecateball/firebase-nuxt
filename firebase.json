@@ -7,6 +7,9 @@
     "ignore": [
       "**/server/**"
     ],
+    "predeploy": [
+      "rsync -ac static/ .nuxt/dist/"
+    ],
     "rewrites": [
       {
         "source": "**",
