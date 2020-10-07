@@ -8,7 +8,7 @@
       "**/server/**"
     ],
     "predeploy": [
-      "rsync -ac static/ .nuxt/dist/"
+      "cp -rf static/ .nuxt/dist"
     ],
     "rewrites": [
       {
