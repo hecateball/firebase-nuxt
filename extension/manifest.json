@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Cloud Run Auth",
+  "version": "0.0.0",
+  "permissions": [
+    "https://*.run.app/*",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  }
+}
