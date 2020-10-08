@@ -4,4 +4,4 @@ COPY . .
 
 ENV HOST 0.0.0.0
 
-CMD ["nuxt", "start"]
+CMD ["npm", "start"]

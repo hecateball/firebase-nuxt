@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build"
+    "build": "nuxt build",
+    "start": "nuxt start"
   },
   "author": "hecateball",
   "license": "ISC",
