@@ -52,4 +52,4 @@ jobs:
         with:
           args: deploy -P $GCP_PROJECT --force
         env:
-          GCP_SA_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+          GCP_SA_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY_BASE64 }}
