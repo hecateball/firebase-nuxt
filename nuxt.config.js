@@ -1,4 +1,7 @@
-module.exports = {
+import path from 'path'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
+
+export default {
   loading: false,
   modules: [ '@inkline/nuxt' ],
   plugins: [
@@ -16,5 +19,17 @@ module.exports = {
   },
   head: {
     title: 'Firebase + Nuxt.js'
+  },
+  build: {
+    plugins: [
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: 'static/',
+            to: path.join(__dirname, '.nuxt/dist')
+          }
+        ]
+      })
+    ]
   }
 }

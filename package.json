@@ -17,6 +17,7 @@
     "@inkline/nuxt": "^2.3.0",
     "@nuxt/types": "^2.14.6",
     "@nuxt/typescript-build": "^2.0.3",
+    "copy-webpack-plugin": "^6.2.0",
     "node-sass": "^4.14.1",
     "sass-loader": "^9.0.3"
   }

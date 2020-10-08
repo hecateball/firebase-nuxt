@@ -8,9 +8,6 @@
     "ignore": [
       "**/server/**"
     ],
-    "predeploy": [
-      "cp -rf static/ .nuxt/dist"
-    ],
     "rewrites": [
       {
         "source": "**",
