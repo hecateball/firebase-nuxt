@@ -4,6 +4,9 @@ node_modules/
 # Nuxt
 .nuxt
 
+# Nuxt PWA
+sw.js
+
 # Firebase
 .firebaserc
 .firebase/

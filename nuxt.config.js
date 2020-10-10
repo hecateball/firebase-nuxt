@@ -4,6 +4,7 @@ import CopyWebpackPlugin from 'copy-webpack-plugin'
 export default {
   loading: false,
   modules: [ '@inkline/nuxt' ],
+  buildModules: [ '@nuxtjs/pwa' ],
   plugins: [
     { src: '~/plugins/firebase', ssr: true },
   ],
