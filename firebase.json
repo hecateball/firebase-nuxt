@@ -4,10 +4,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": ".nuxt/dist",
-    "ignore": [
-      "**/server/**"
-    ],
+    "public": "static",
     "rewrites": [
       {
         "source": "**",
