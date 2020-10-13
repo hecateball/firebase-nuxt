@@ -1,7 +1,12 @@
 export default {
   loading: false,
-  modules: [ '@inkline/nuxt' ],
-  buildModules: [ '@nuxtjs/pwa' ],
+  modules: [
+    '@inkline/nuxt'
+  ],
+  buildModules: [
+    '@nuxtjs/composition-api',
+    '@nuxtjs/pwa'
+  ],
   plugins: [
     { src: '~/plugins/firebase', ssr: true },
   ],
